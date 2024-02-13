@@ -8,11 +8,13 @@ from PIL import ImageTk, Image
 def main():
     master.mainloop()
 
+#create display window
 master = Tk()
 master.geometry("800x500")
 master.title("Weather App")
 master.config(bg="white")
 
+#open and display image in window
 img = Image.open("C:\\Users\\wcalm\\OneDrive\\Desktop\\weather-2021-12-07.png")
 img = img.resize((150, 150))
 img = ImageTk.PhotoImage(img)
@@ -23,6 +25,7 @@ def get_city():
     if city1 != "":
         getWeather()
 
+#create button
 myentry = tk.Entry(master)
 myentry.grid(row=3, padx=180)
 button = tk.Button(master, text="SUBMIT", command=get_city)
